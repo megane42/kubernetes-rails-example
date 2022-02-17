@@ -17,6 +17,12 @@ spec:
         image: megane42/kubernetes-rails-example:latest
         ports:
         - containerPort: 3000
+        env:
+        - name: RAILS_MASTER_KEY
+          valueFrom:
+            secretKeyRef:
+              name: rails-secrets
+              key: rails_master_key
         envFrom:
         - configMapRef:
             name: env
