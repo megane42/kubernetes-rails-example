@@ -11,8 +11,10 @@ WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-COPY . .
+COPY package.json yarn.lock ./
+RUN yarn install
 
+COPY . .
 RUN rake assets:precompile
 
 EXPOSE 3000
