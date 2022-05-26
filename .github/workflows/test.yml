@@ -4,5 +4,8 @@ on:
 jobs:
   run_test_jobs:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      - run: curl -v $ACTIONS_ID_TOKEN_REQUEST_URL
+      - run: env | grep "ACTIONS" | sort
