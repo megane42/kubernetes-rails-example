@@ -5,4 +5,4 @@ jobs:
   run_test_jobs:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $ACTIONS_ID_TOKEN_REQUEST_URL
+      - run: env
